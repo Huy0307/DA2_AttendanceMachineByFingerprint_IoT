@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="shortcut icon" href="./img/Icon/home.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/limontesweetalert2/7.2.0/sweetalert2.min.css/>" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+</head>
+
+<body>
+    <div class="sidebar" id="btn">
+        <ul class="nav">
+            <li>
+                <button id="home">
+                    <i class="material-icons">home</i>
+                    <span class="link_name">Home</span>
+                </button>
+            </li>
+            <li>
+                <button href="#" id="Workspace">
+                    <i class="material-icons">work_outline</i>
+                    <span class="link_name">Workspace</span>
+                </button>
+            </li>
+        </ul>
+        <div id="setup" style="position: fixed; display: flex; right: 0; list-style: none;">
+            <li>
+                <a href="#" id="mode" class="a mode" style="left: 0;">
+                    <div class="dropdown mode-icon">
+                        <i class="material-icons">dark_mode</i>
+                    </div>
+                    <div class="dropdown-content-mode links">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="Support.html" class="a"><i class="material-icons">info</i></a>
+            </li>
+            <li class="dropdown">
+                <button id="ic">
+                    <i class="material-icons" id="icon">login</i>
+                    <span class="link_name" id="nameic">Login</span>
+                    <i class="material-icons" id="arrow">arrow_drop_down</i>
+                </button>
+            </li>
+            <div class="dropdown-content">
+                <li>
+                    <a href="Change.html" class="key links">
+                        <i class="material-icons">key</i>
+                        <span class="link_name">Change password</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="logout" class="links link">
+                        <i class="material-icons">logout</i>
+                        <span class="link_name" id="nameic">Logout</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </div>
+    <div id="home" class="home">
+        <img src="./img/Background/spkt.png" id="spkt">
+        <h1 style="color: #FFF000; font-family: Times; margin-top: 12vh;" class="name1">HỆ THỐNG GIÁM SÁT NHIỆT ĐỘ VÀ
+            CẢNH BÁO</h1>
+        <h1 style="color: #FFF000; font-family: Times" class="name1 word">TÍCH HỢP ĐIỂM DANH</h1>
+        <div id="dong_ho">
+            <div id="thoi_gian" class="time">
+                <div>
+                    <span id="gio">00</span>
+                </div>
+                <div>
+                    <span> : </span>
+                </div>
+                <div>
+                    <span id="phut">00</span>
+                </div>
+            </div>
+        </div>
+        <div id="lich">
+            <div id="ngaythangnam" class="day">
+                <div>
+                    <span id="thu">0</span>
+                </div>
+                <div>
+                    <span id="ngay">00</span>
+                </div>
+                <div>
+                    <span>/</span>
+                </div>
+                <div>
+                    <span id="thang">00</span>
+                </div>
+                <div>
+                    <span>/</span>
+                </div>
+                <div>
+                    <span id="nam">0000</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="Home.js"></script>
+</body>

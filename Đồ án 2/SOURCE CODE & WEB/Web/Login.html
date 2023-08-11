@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="shortcut icon" href="./img/Icon/login.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limontesweetalert2/7.2.0/sweetalert2.min.css/>" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+</head>
+
+<body>
+  <div class="loading" id="loading">
+    <img src="https://thumbs.gfycat.com/HighCorruptIsabellineshrike-max-1mb.gif" alt="loading">
+  </div>
+  <div class="login">
+    <div class="login__container">
+      <h1>Login</h1>
+      <form action="" class="form" onsubmit="onSubmitForm(this);
+        return false;">
+        <div class="form__username">
+          <div class="form__username--icon form__icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="form__username--input form__input">
+            <input type="text" id="username" placeholder="Username" name="username" />
+          </div>
+        </div>
+        <p id="errorUsername"></p>
+        <div class="form__password">
+          <div class="form__password--icon form__icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <div class="form__password--input form__input">
+            <input type="password" id="password" placeholder="Password" name="password" />
+            <span class="fas fa-eye" id="togglePassword"></span>
+          </div>
+        </div>
+        <p id="errorPassword"></p>
+        <button type="submit" class="login__signInButton" id="submit">Login</button>
+      </form>
+      <a href="Signup.html" class="login__registerButton" style="float: right; color: #fff;">Sign Up
+      </a>
+      <a href="./index.html">
+        <button class="btn">
+          <span>
+            Back
+          </span>
+        </button>
+      </a>
+    </div>
+  </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+<script src="Login.js"></script>
+
+</html>

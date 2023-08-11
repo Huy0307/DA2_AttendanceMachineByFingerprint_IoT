@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workspace</title>
+    <link rel="shortcut icon" href="./img/Icon/workspace.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="Workspace.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/limontesweetalert2/7.2.0/sweetalert2.min.css/>" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+
+<body>
+    <div class="sidebar" id="btn">
+        <ul class="nav">
+            <li>
+                <button id="home">
+                    <i class="material-icons">home</i>
+                    <span class="link_name">Home</span>
+                </button>
+            </li>
+            <li>
+                <button href="#" id="Workspace">
+                    <i class="material-icons">work_outline</i>
+                    <span class="link_name">Workspace</span>
+                </button>
+            </li>
+        </ul>
+        <div style="position: fixed; display: flex; right: 0; list-style: none;">
+            <li>
+                <a href="#" class="a" id="Download" style="display: flex; margin-left: 32vw;"><i
+                        class="material-icons">download_for_offline</i></a>
+            </li>
+            <li>
+                <a href="#" id="mode" class="a mode" style="left: 0;">
+                    <div class="dropdown mode-icon">
+                        <i class="material-icons">dark_mode</i>
+                    </div>
+                    <div class="dropdown-content-mode links">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="Support.html" class="a"><i class="material-icons">info</i></a>
+            </li>
+            <li class="dropdown">
+                <button id="ic">
+                    <i class="material-icons" id="icon">login</i>
+                    <span class="link_name" id="nameic">Login</span>
+                    <i class="material-icons" id="arrow">arrow_drop_down</i>
+                </button>
+            </li>
+            <div class="dropdown-content">
+                <li>
+                    <a href="Change.html" class="key links">
+                        <i class="material-icons">key</i>
+                        <span class="link_name">Change password</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="logout" class="links link">
+                        <i class="material-icons">logout</i>
+                        <span class="link_name" id="nameic">Logout</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </div>
+    <!-- -------------------------------------------button----------------------------------------------------- -->
+    <button id="Weekly">
+        <span class="material-icons icon">date_range</span>
+        <p>RT data</p>
+    </button>
+    <button id="All">
+        <span class="material-icons icon">dataset</span>
+        <p>Weekly</p>
+    </button>
+    <button id="Detail">
+        <span class="material-icons icon">face</span>
+        <p>Detail</p>
+    </button>
+    <!-- -------------------------------------------button----------------------------------------------------- -->
+
+    <!-- -----------------------------------------All datas---------------------------------------------------- -->
+    <div class="container" style="display: none;">
+        <h1 style="color: inherit; text-align: center; margin-top: 10vh;">Weekly datas</h1>
+        <div class="button">
+            <button id="delete-data">
+                <span class="material-icons icon">delete</span>
+                <p>Delete</p>
+            </button>
+            <button id="Add">
+                <span class="material-icons icon">add_circle</span>
+                <p>Add</p>
+            </button>
+            <button id="Shorten-all" style="display: none;">
+                <span class="material-icons icon">arrow_upward</span>
+                <p>Shorten</p>
+            </button>
+        </div>
+        <table class="table">
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                <th>Sun</th>
+            </thead>
+            <tbody id="tbody1">
+
+            </tbody>
+        </table>
+        <button id="Load1">Load more</button>
+        <!-- -----------------------------------------All datas---------------------------------------------------- -->
+
+        <!-- ---------------------------------------Weekly datas--------------------------------------------------- -->
+    </div>
+    <div class="container2" style="display: block;">
+        <h1 style="color: inherit; text-align: center; margin-top: 10vh;">Realtime datas</h1>
+        <button id="delete">
+            <span class="material-icons icon">delete</span>
+            <p>Delete</p>
+        </button>
+        <button id="Shorten-weekly" style="display: none;">
+            <span class="material-icons icon">arrow_upward</span>
+            <p>Shorten</p>
+        </button>
+        <table class="table">
+            <thead>
+                <th>Day</th>
+                <th>Time</th>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Temp</th>
+            </thead>
+            <tbody id="tbody2">
+
+            </tbody>
+        </table>
+        <button id="Load">Load more</button>
+        <!-- ---------------------------------------Weekly datas--------------------------------------------------- -->
+
+        <!-- ------------------------------------------Detail------------------------------------------------------ -->
+    </div>
+    <div class="container3" style="display: none;">
+        <h1 style="color: inherit; text-align: center; margin-top: 10vh; margin-bottom: 1vh;">Detail</h1>
+        <button id="Change">
+            <span class="material-icons icon">change_circle</span>
+            <p>Change</p>
+        </button>
+        <button id="delete-id">
+            <span class="material-icons icon">delete</span>
+            <p>Delete</p>
+        </button>
+        <button id="Search">
+            <span class="material-icons icon">search</span>
+            <p>Search</p>
+        </button>
+        <div style="display: flex;">
+            <button id="left">
+                <span class="material-icons icon">chevron_left</span>
+            </button>
+            <button id="right">
+                <span class="material-icons icon">navigate_next</span>
+            </button>
+        </div>
+        <div class="box" style="margin-bottom: 0vh;">
+            <div class="box3" style="margin-left: 10vw; width: 50vw; height: 80vh;">
+                <div id="Imageshow" style="width: 85%; height: 50%;"></div>
+                <h2 style="color: inherit; font-family: Times" class="dt">UserID: <span id="UID">UserID</span></h2>
+                <h2 style="color: inherit; font-family: Times" class="dt">Name: <span id="Name">Name</span></h2>
+                <h2 style="color: inherit; font-family: Times" class="dt">Birth: <span id="Birth">Birth</span></h2>
+                <h2 style="color: inherit; font-family: Times" class="dt">Gender: <span id="Gender">Gender</span></h2>
+                <h2 style="color: inherit; font-family: Times" class="dt">Phone: <span id="Phone">Phone</span></h2>
+            </div>
+            <div class="box2" style="margin-right: 5vw">
+                <table class="table" style="margin-left: 11.6vw;">
+                    <thead>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Temp</th>
+                    </thead>
+                    <tbody id="tbody3">
+
+                    </tbody>
+                </table>
+                <div id="chartContainer">
+                    <div class="bar" id="Early" style="width: 0px;">
+                        <p class="text">Early</p>
+                    </div>
+                    <div class="bar" id="Ontime" style="width: 0px;">
+                        <p class="text">Ontime</p>
+                    </div>
+                    <div class="bar" id="Late" style="width: 0px;">
+                        <p class="text">Late</p>
+                    </div>
+                    <div class="bar" id="Timeout" style="width: 0px;">
+                        <p class="text">Timeout</p>
+                    </div>
+                </div>
+                <div class="chart-labels">
+                    <div class="label">0</div>
+                    <div class="label">1</div>
+                    <div class="label">2</div>
+                    <div class="label">3</div>
+                    <div class="label">4</div>
+                    <div class="label">5</div>
+                    <div class="label">6</div>
+                    <div class="label">7</div>
+                    <div class="label">8</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ------------------------------------------Detail------------------------------------------------------ -->
+
+    <!-- -----------------------------------------Add new------------------------------------------------------ -->
+    <div class="container4" style="display: none;">
+        <h1 style="color: inherit; text-align: center; margin-top: 10vh; margin-bottom: 5vh;" id="Add-new">Add new</h1>
+        <h1 style="color: inherit; text-align: center; margin-top: 10vh; margin-bottom: 5vh; display: none;"
+            id="Change-data">Change</h1>
+        <div class="box">
+            <div class="box1">
+                <h2 style="color: inherit; font-family: Times" class="add">UserID:
+                    <span id="IDADD2"
+                        style="color: black; border: 2px solid black;font-size: 80%; background-color: #ccc; display: none;">UserID</span>
+                    <input type="text" placeholder="UserID" id="IDADD">
+                </h2>
+                <h2 style="color: inherit; font-family: Times" class="add">Name: <input type="text" placeholder="Name"
+                        id="NameADD">
+                </h2>
+                <span>
+                    <h2 style="color: inherit; font-family: Times" class="add">Gender:
+                        <input type="radio" id="male" name="gender" class="Gender" value="Male"> <label
+                            for="male">Male</label>
+                        <input type="radio" id="female" name="gender" class="Gender" value="Female"> <label
+                            for="female">Female</label>
+                        <input type="radio" id="other" name="gender" class="Gender" value="Other"> <label
+                            for="other">Other</label>
+                    </h2>
+                </span>
+                <span>
+                    <h2 style="color: inherit; font-family: Times" class="add">Birth:
+                        <input type="date" id="BirthADD">
+                    </h2>
+                </span>
+                <span>
+                    <h2 style="color: inherit; font-family: Times" class="add">Phone:
+                        <input type="input" placeholder="Phone number" id="PhoneADD">
+                    </h2>
+                </span>
+                <button id="Submit">Submit</button>
+            </div>
+            <div class="box2">
+                <form method="post" enctype="multipart/form-data" id="uploadForm">
+                    <input type="file" id="fileInput" style="margin-left: 15vw; margin-bottom: 2vh;">
+                    <input type="submit" value="Upload" id="Upload">
+                </form>
+                <div id="imageContainer" style="width: 70%; height: 90%; ; 
+            margin-left: 7vw;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -----------------------------------------Add new------------------------------------------------------ -->
+    <table class="table" id="table1" style="display: none;">
+        <thead>
+            <th>Day</th>
+            <th>Time</th>
+            <th>ID</th>
+            <th>Status</th>
+            <th>Temp</th>
+        </thead>
+        <tbody id="tbody4">
+
+        </tbody>
+    </table>
+
+    <table class="table" id="table2" style="display: none; margin-left: 0px;">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Birth</th>
+            <th>Gender</th>
+            <th>Phone</th>
+            <th>Mon</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Temp</th>
+            <th>Tue</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Temp</th>
+            <th>Wed</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Temp</th>
+            <th>Thu</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Temp</th>
+            <th>Fri</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Temp</th>
+            <th>Sat</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Temp</th>
+            <th>Sun</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Temp</th>
+        </thead>
+        <tbody id="tbody5">
+
+        </tbody>
+    </table>
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+<script src="Workspace.js"></script>
+
+</html>

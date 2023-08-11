@@ -1,0 +1,293 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Roboto", sans-serif;
+    overflow: hidden;
+}
+
+.form {
+    width: 100%;
+}
+
+.form__username,
+.form__password {
+    display: flex;
+}
+
+.form__icon {
+    font-size: 100%;
+    background: #363b41;
+    width: 15%;
+    height: 5.1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__icon i {
+    color: #fff;
+}
+
+.form__input {
+    width: 100%;
+    position: relative;
+}
+
+.form__input>input {
+    width: 100%;
+    height: 45%;
+    padding-left: 1rem;
+    font-size: 1.7rem;
+    margin-top: -1px;
+    color: black;
+    background-color: #fff;
+    transition: background-color 0.4s;
+}
+
+#toggleoldPassword,
+#togglePassword,
+#toggleEAPassword {
+    position: absolute;
+    font-size: 2rem;
+    color: rgb(168, 161, 161);
+    top: 25%;
+    right: 1rem;
+    transform: translate(0, -50%);
+    cursor: pointer;
+}
+
+.message__error {
+    font-size: 1.5rem;
+    color: rgb(248, 61, 61);
+    margin-top: -30px;
+}
+
+
+.loading {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.479);
+}
+
+.loading img {
+    width: 7rem;
+}
+
+/* style login */
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(./img/Background/bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.login__container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+    background: transparent;
+    opacity: 0.8;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.login__container h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+}
+
+.login__container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login__container form input {
+    padding: 12px;
+    margin-bottom: 25px;
+    margin-top: 0.49px;
+}
+
+.login__container form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.login__container form button:hover {
+    background: #555;
+}
+
+.login__registerButton {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: block;
+}
+
+.btn {
+    margin-top: 5%;
+    margin-left: 2%;
+    background-color: #333;
+    padding: 8px 8px;
+    color: #fff;
+    border-radius: 7px;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.btn span:after {
+    content: '<';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -20px;
+    transition: 0.5s;
+}
+
+.btn:hover span {
+    padding-left: 15px;
+}
+
+.btn:hover span:after {
+    opacity: 1;
+    left: 0;
+}
+
+/* style signup */
+.signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(./img/Background/bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.signup__container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+    background: transparent;
+    opacity: 0.8;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.signup__container h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+}
+
+.signup__container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup__container form input {
+    padding: 15px;
+    margin-bottom: 19px;
+    margin-top: -0.1px;
+}
+
+.signup__container form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.signup__container form button:hover {
+    background: #555;
+}
+
+.signup__registerButton {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: block;
+}
+
+#back {
+    float: right;
+}
+
+.box1 {
+    padding: 2.5px;
+    border: 2px solid #333;
+    background-color: #bcb1b1;
+    margin-top: 0.5px;
+    margin-bottom: 40px;
+    font-size: 25px;
+}
+
+@media screen and (max-width: 767px) {
+    .login {
+        background-image: url(./img/Background/dt.png);
+        background-size: 100% 100%;
+    }
+
+    .signup {
+        background-image: url(./img/Background/dt.png);
+        background-size: 100% 100%;
+    }
+}
+
+@media screen and (min-width:767px) and (max-width:1023px) {
+    .login {
+        background-image: url(./img/Background/tablet.png);
+        background-size: 100% 100%;
+    }
+
+    .signup {
+        background-image: url(./img/Background/tablet.png);
+        background-size: 100% 100%;
+    }
+}

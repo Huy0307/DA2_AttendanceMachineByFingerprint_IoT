@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image to Base64 Converter</title>
+</head>
+<body>
+  <h1>Image to Base64 Converter</h1>
+  <input type="file" id="imageInput" accept="image/*">
+  <button onclick="convertToBase64()">Convert</button>
+  <div id="base64Result"></div>
+
+  <script>
+    var webSocket = new WebSocket('ws://192.168.1.13:8080'); // Replace with your ESP32 IP address
+
+    webSocket.onopen = function(event) {
+      console.log('WebSocket connected');
+    };
+
+    webSocket.onmessage = function(event) {
+      console.log('Message from ESP32:', event.data);
+    };
+
+    webSocket.onerror = function(event) {
+      console.error('WebSocket error:', event);
+    };
+
+    webSocket.onclose = function(event) {
+      console.log('WebSocket disconnected');
+    };
+
+    function convertToBase64() {
+      var fileInput = document.getElementById('imageInput');
+      var file = fileInput.files[0];
+      if (!file) {
+        alert("Please select an image.");
+        return;
+      }
+
+      var reader = new FileReader();
+      reader.onload = function() {
+        var base64String = reader.result.split(',')[1];
+        document.getElementById('base64Result').innerText = base64String;
+        // Send the base64String to ESP32 via WebSocket
+        webSocket.send(base64String);
+      };
+      reader.readAsDataURL(file);
+    }
+  </script>
+</body>
+</html>

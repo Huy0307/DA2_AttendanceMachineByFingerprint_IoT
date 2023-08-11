@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register</title>
+  <link rel="shortcut icon" href="./img/Icon/edit.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limontesweetalert2/7.2.0/sweetalert2.min.css/>" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="loading" id="loading">
+    <img src="https://thumbs.gfycat.com/HighCorruptIsabellineshrike-max-1mb.gif" alt="loading">
+  </div>
+  <div class="signup">
+    <div class="signup__container">
+      <h1>Sign Up</h1>
+      <form action="" class="form" onsubmit="onSubmitForm(this);
+        return false;">
+        <div class="form__username">
+          <div class="form__username--icon form__icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="form__username--input form__input">
+            <input type="text" id="username" placeholder="Username" name="username" />
+          </div>
+        </div>
+        <p id="errorUsername"></p>
+        <div class="form__password">
+          <div class="form__password--icon form__icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <div class="form__password--input form__input">
+            <input type="password" id="password" placeholder="Password" name="password" />
+            <span class="fas fa-eye" id="togglePassword"></span>
+          </div>
+        </div>
+        <p id="errorPassword"></p>
+        <div class="form__password">
+          <div class="form__password--icon form__icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <div class="form__password--input form__input">
+            <input type="password" id="EApassword" placeholder="Enter password again" name="EApassword" />
+            <span class="fas fa-eye" id="toggleEAPassword"></span>
+          </div>
+        </div>
+        <p id="errorEAPassword"></p>
+        <button type="submit" class="signup__signInButton">Sign Up</button>
+      </form>
+      <a href="login.html" class="signup__registerButton" style="float: right; color: #fff;">Login</a>
+    </div>
+  </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+<script src="Signup.js"></script>
+
+</html>
